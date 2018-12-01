@@ -14,14 +14,8 @@ func main() {
 }
 
 func readFromFile() []string {
-	data, err := ioutil.ReadFile("1st/input.txt")
-
-	if err != nil {
-		fmt.Errorf("error %s", err)
-	}
-
-	file := string(data)
-	return strings.Split(file, "\r\n")
+	data, _ := ioutil.ReadFile("1st/input.txt")
+	return strings.Split(string(data), "\r\n")
 }
 
 func calculateResult(fileSlice []string) int {
