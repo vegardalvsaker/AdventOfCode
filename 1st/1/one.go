@@ -27,8 +27,8 @@ func readFromFile() []string {
 func calculateResult(fileSlice []string) int {
 	result := 0
 	for _, current := range fileSlice {
-			tall, _ := strconv.Atoi(current)
-			result += tall
+		tall, _ := strconv.Atoi(current)
+		result += tall
 	}
 	return result
 }
