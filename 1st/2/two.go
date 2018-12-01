@@ -12,17 +12,10 @@ func main() {
 }
 
 func findFirstDuplicate() {
-	data, err := ioutil.ReadFile("1st/input.txt")
+	data, _ := ioutil.ReadFile("1st/input.txt")
+	fileSlice := strings.Split(string(data), "\r\n")
 
-	if err != nil {
-		fmt.Errorf("error %s", err)
-	}
-
-	file := string(data)
-
-	fileSlice := strings.Split(file, "\r\n")
-
-	result := 0
+	frequency := 0
 	var frequencyHistory []int
 
 	tall := 1
@@ -31,11 +24,11 @@ func findFirstDuplicate() {
 		tall++
 		for i := 0; i < len(fileSlice); i++ {
 			tall, _ := strconv.Atoi(fileSlice[i])
-			result += tall
-			frequencyHistory = append(frequencyHistory, result)
+			frequency += tall
+			frequencyHistory = append(frequencyHistory, frequency)
 			for k := 0; k < len(frequencyHistory)-1; k++ {
-				if result == frequencyHistory[k] {
-					fmt.Println("FIRST DUPLICATE", result)
+				if frequency == frequencyHistory[k] {
+					fmt.Println("FIRST DUPLICATE", frequency)
 					stop = true
 					k = len(frequencyHistory) + 1
 					i = len(fileSlice) +1
