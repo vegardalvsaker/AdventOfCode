@@ -8,7 +8,7 @@ import (
 )
 
 /**
-Not entirely my code. Had to sneek at
+Not entirely my code. Had to sneek at https://github.com/breakintheweb/adventofcode2018/tree/master/03
  */
 func main () {
 	fabric := make([][]int, 1000)
