@@ -25,7 +25,6 @@ func main() {
 	guardLogs := []GuardLog{}
 
 
-	fmt.Println("Startin loop at line 32")
 	for _, line := range fileSlice {
 		line =strings.TrimPrefix(line, "[")
 		splittedLine := strings.SplitAfter(line, "]")
@@ -35,7 +34,6 @@ func main() {
 		if err != nil {
 			fmt.Println("error:", err)
 		}
-		//fmt.Println(time.Minute())
 		guardLog := GuardLog{time, note}
 		guardLogs = append(guardLogs, guardLog)
 	}
